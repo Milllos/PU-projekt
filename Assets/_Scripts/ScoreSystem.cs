@@ -1,11 +1,14 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScoreSystem : MonoBehaviour
 {
     public static ScoreSystem instance;
     private int score = 0;
     TMP_Text scoreText;
+
+    public int maxPoints = 10;
     private void Awake()
     {
         if (instance != null)
@@ -24,5 +27,9 @@ public class ScoreSystem : MonoBehaviour
     {
         score += pointValue;
         scoreText.text = "Score: " + score.ToString();
+        if (score >= maxPoints)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 }
