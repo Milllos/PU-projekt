@@ -178,6 +178,7 @@ public class PlatformControllerAdv : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             jumpEffect.Play();
             isJumping = true;
+            isGrounded = false;
             jumpTimeLeft = jumpTime;
             coyoteTimeLeft = 0;
             jumpBufferCounter = 0;
