@@ -25,6 +25,7 @@ public class LevelLoader : MonoBehaviour
         LoadLevelByID((SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings);
     }
 
+
     public void Quit()
     {
         Application.Quit();
